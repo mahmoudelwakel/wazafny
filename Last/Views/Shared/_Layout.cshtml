@@ -1,0 +1,72 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body dir="auto">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("وظفني شكرا", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("الرئيسيه", "Index", "Home")</li>
+                    <li>@Html.ActionLink("عنا", "About", "Home")</li>
+                    <li>@Html.ActionLink("حولنا", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer >
+            <div class="row"style="background-color:cornflowerblue">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h2 style="color:black">من نحن؟</h2>
+                    <p>سعدنا بزيارتكم علي موقعنا الشخصي للتقدم او البحث عن وظيفة او النشر عل موقع وظفني شكرا</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h2 style="color:black">روابط هامة </h2>
+                 <p>
+                    وظائف القطاع العام<br />
+                     وظائف القطاع الخاص<br />
+                     وظائف القطاع الخاص خارج البلاد<br />
+                 </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <h2 style="color:black">تواصل معانا </h2>
+                    <p>
+                       صفحتنا ع الفيس بوك<br />
+                        تابعنا ع تويتر<br />
+                        شاهدنا ع اليوتيوب<br />
+                        اترك لنا رسالة
+                    </p>
+                </div>
+
+            </div>
+
+            
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+       
+        <script src="~/Content/jquery.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿@model Last.Models.job
+
+@{
+    ViewBag.Title = "تفاصيل";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>تفاصيل</h2>
+
+<div>
+    <h4>الوظيفة</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobImage)
+        </dt>
+
+        <dd>
+          <img src="~/Uploads/@Html.DisplayFor(model=>model.jobImage)"class="thumbnail"
+               style="width:48px;height:48px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("حفظ", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("العودة الي القائمة  ", "Index")
+</p>
